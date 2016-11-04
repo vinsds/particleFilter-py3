@@ -13,7 +13,7 @@ Queste, non essendo prensenti in ambiente, Python sono state implementate preced
 
 <b>Nota:</b> Per poter utilizzare queste funzioni, devono essere ricompilate per il proprio OS
 <br >
-<b style="display:block;">Mac OSX</b>
+<b style="display:block;">Mac OSX</b><br />
 cd c_script<br />
 python3 setup_normpdf.py build<br />
 python3 setup_normpdf.py install<br />
