@@ -11,9 +11,7 @@ L'implementazione dell'algoritmo prende come riferimento la seguente pubblicazio
 Sono resi disponibili gli script MATLAB® realizzati per lo studio e la valutazione delle prestazioni del filtro e 
 i sorgenti Python per l'implementazione del filtro
 
-<b>Progetto a cura di:</b>
-Di Sciullo Vincenzo
-Nicolini Sara
-Tommaso Bolzonetti
+<b>Progetto a cura di:</b><br>
+Di Sciullo Vincenzo - Nicolini Sara - Tommaso Bolzonetti
 
 
