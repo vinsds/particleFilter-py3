@@ -1,4 +1,4 @@
-# Progetto per il corso\ di Sistemi Embedded
+# Progetto per il corso di Sistemi Embedded
 
 <b>Obiettivo</b>
 Studio, sviluppo ed implementazione di un algoritmo per un particle filter ad N-stati.
