@@ -57,7 +57,7 @@ class PF:
             for i in range(0, ns):
                 #xk[0, i] = state(k, xkm1[i], xkm2[i], self.noise.gen_sys_noise())
                 xk[:, i] = state_functions[n](k, xkm1[i], xkm2[i], xkm3[i], self.noise.gen_sys_noise())
-                wk[i] = wkm1[i, 0] * self.p_yk_given_xk(yk, xk[n, i], n)
+                wk[i] = wkm1[i] * self.p_yk_given_xk(yk, xk[n, i], n)
 
         aux = 0
 

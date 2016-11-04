@@ -21,8 +21,8 @@ sys_par = Parameters(
 )
 
 # Define Noise parameters
-SIGMA_U = 1
-SIGMA_V = 10
+SIGMA_U = 10
+SIGMA_V = 1
 
 noise = Noise(
     sys_par.state_dim,
