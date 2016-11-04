@@ -3,7 +3,6 @@ __pycache__/State_functions.cpython-36.pyc
 c_script/build/
 c_extends/myNormrnd.cpython-35m-darwin.so
 c_extends/myPdf.cpython-35m-darwin.so
-Graph.py
 __pycache__/Graph.cpython-35.pyc
 __pycache__/Noise.cpython-35.pyc
 __pycache__/Observations.cpython-35.pyc
