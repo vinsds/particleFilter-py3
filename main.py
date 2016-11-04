@@ -2,11 +2,11 @@ from Parameters import *
 from Noise import *
 from PF import *
 from State_functions import *
-
+from Graph import *
 '''
 Set DEBUG true to show the operations results
 '''
-DEBUG = False
+DEBUG = True
 
 
 # Define system parameters and observation time
@@ -86,6 +86,9 @@ for n in range(0, sys_par.state_dim):
         xh[n, k] = test_filter.start(y[n, k])
         yh[n, k] = obs_functions[n](xh[n, k], 0)
 
+if DEBUG:
+    trace_graph(sys_par.state_dim, x, xh, "State Vs State Filtered")
+    trace_graph(sys_par.state_dim, y, yh, "Observations Vs Observations Filtered")
 
 
 

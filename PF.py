@@ -56,7 +56,7 @@ class PF:
         for n in range(0, nx):
             for i in range(0, ns):
                 #xk[0, i] = state(k, xkm1[i], xkm2[i], self.noise.gen_sys_noise())
-                xk[0, i] = state_functions[n](k, xkm1[i], xkm2[i], xkm3[i], self.noise.gen_sys_noise())
+                xk[:, i] = state_functions[n](k, xkm1[i], xkm2[i], xkm3[i], self.noise.gen_sys_noise())
                 wk[i] = wkm1[i, 0] * self.p_yk_given_xk(yk, xk[n, i], n)
 
         aux = 0
@@ -84,12 +84,12 @@ class PF:
         wk = wk.transpose()
 
         for i in range(0, ns):
-            xhk = xhk + wk[i] * xk[0, i]
+            xhk = xhk + wk[i] * xk[:, i]
 
         for t in range(0, ns):
             self.w[t, k] = wk[t]
 
-        self.vect_particles[0, :, k] = xk[:, k]
+        self.vect_particles[:, :, k] = xk[:, k]
 
         return xhk
 
