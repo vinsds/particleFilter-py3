@@ -1,7 +1,8 @@
 from Observations import *
 from operator import truediv
-from State import *
+from State_functions import *
 from numpy import *
+from c_extends import myNormrnd
 
 
 class PF:
@@ -14,8 +15,8 @@ class PF:
         self.noise = noise
         self.sys_gen_noise = noise.gen_sys_noise()
 
-    def p_yk_given_xk(self, yk, xk):
-        return self.noise.p_obs_noise(yk - obs(xk, 0))
+    def p_yk_given_xk(self, yk, xk, index):
+        return self.noise.p_obs_noise(yk - obs_functions[index](xk, 0))
 
     def to_string(self):
         return "TEST PARTICLE:" \
@@ -40,21 +41,23 @@ class PF:
 
         if k == 1:
             for i in range(0, ns):
-                self.vect_particles[:, i, 0] = random.normal(0, math.sqrt(10))
+                self.vect_particles[:, i, 0] = myNormrnd.normRND(0, math.sqrt(10))
 
         a = truediv(1, ns)
         wkm1 = tile(a, (self.n_particles, 1))
 
         xkm1 = self.vect_particles[0, :, k-1]
         xkm2 = self.vect_particles[0, :, k-1]
+        xkm3 = self.vect_particles[0, :, k - 1]
 
         xk = zeros((nx, ns))
         wk = zeros(ns)
 
         for n in range(0, nx):
             for i in range(0, ns):
-                xk[0, i] = state(k, xkm1[i], xkm2[i], self.noise.gen_sys_noise())
-                wk[i] = wkm1[i, 0] * self.p_yk_given_xk(yk, xk[n, i])
+                #xk[0, i] = state(k, xkm1[i], xkm2[i], self.noise.gen_sys_noise())
+                xk[0, i] = state_functions[n](k, xkm1[i], xkm2[i], xkm3[i], self.noise.gen_sys_noise())
+                wk[i] = wkm1[i, 0] * self.p_yk_given_xk(yk, xk[n, i], n)
 
         aux = 0
 

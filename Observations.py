@@ -1,8 +1,10 @@
 from numpy import *
 
+obs_functions = [
 
-def obs(x, v):
-    if v == '':
-        v = 0
-    x = math.pow(x, 2)
-    return x / 20 + v
+    lambda x, v: math.pow(x, 2) / 20 + v,
+    lambda x, v: math.pow(x, 2) / 20 + v,
+    lambda x, v: math.pow(x, 2) / 20 + v
+
+]
+
