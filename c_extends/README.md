@@ -20,5 +20,5 @@ python3 setup_normpdf.py install
 python3 setup_normrnd.py build
 python3 setup_normrnd.py install<br />
 Terminate queste operazioni, viene generata una cartella build all'interno di c_script. 
-Prendere i file con estensione .so e copiarli all'interno della cartella c_extends
+Prendere i file con estensione *.so e copiarli all'interno della cartella c_extends
 </blockquote>
