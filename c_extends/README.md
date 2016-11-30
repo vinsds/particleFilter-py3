@@ -14,10 +14,10 @@ Queste, non essendo prensenti in ambiente, Python sono state implementate preced
 <b>Nota:</b> Per poter utilizzare queste funzioni, devono essere ricompilate per il proprio OS
 <br >
 <b style="display:block;">Mac OSX</b>
-cd c_script
-python3 setup_normpdf.py build
-python3 setup_normpdf.py install
-python3 setup_normrnd.py build
+cd c_script <br />
+python3 setup_normpdf.py build <br />
+python3 setup_normpdf.py install <br />
+python3 setup_normrnd.py build <br />
 python3 setup_normrnd.py install<br />
 Terminate queste operazioni, viene generata una cartella build all'interno di c_script. 
 Prendere i file con estensione *.so e copiarli all'interno della cartella c_extends
