@@ -5,13 +5,17 @@ clear, clc, close all;
 %% Definizione delle funzioni di stato
 
 process = {
+     % Simulazione
      @(k, xkm1, xkm2, xkm3, uk) xkm1/2 + 25*xkm2/(1+xkm2^2) + 8*cos(1.2*k) + uk;
+     @(k, xkm1, xkm2, xkm3, uk) xkm2 + 10*xkm1/(1+xkm3^2) + 4*cos(1.2*k) + uk;
+     @(k, xkm1, xkm2, xkm3, uk) xkm1/2 + 25*xkm2/(1+xkm2^2) + 8*cos(1.2*k) + uk;
+
      %@(k, xkm1, xkm2, xkm3, uk) xkm2 + 10*xkm1/(1+xkm3^2) + 4*sin(1.2*k) + uk;
-     @(k, xkm1, xkm2, xkm3, uk) xkm3/2 + 6*xkm2/(1+1*xkm2^2) + 4*cos(1.2*k) + uk;
+     %--@(k, xkm1, xkm2, xkm3, uk) xkm3/2 + 6*xkm2/(1+1*xkm2^2) + 4*cos(1.2*k) + uk;
      %@(k, xkm1, xkm2, xkm3, uk) xkm1/2 + 25*xkm2/(1+xkm2^2) + 8*cos(1.2*k) + uk;
      %@(k, xkm1, xkm2, xkm3, uk) xkm1/2 + 25*xkm2/(1+xkm2^2) + 8*cos(1.2*k) + uk;
      %@(k, xkm1, xkm2, xkm3, uk) xkm2 + 25*xkm1/(1+xkm1^2) + 8*cos(1.2*k) + uk;
-     @(k, xkm1, xkm2, xkm3, uk) xkm1/2 + 25*xkm3/(1+xkm3^2) + 8*cos(1.2*k) + uk;
+     %--@(k, xkm1, xkm2, xkm3, uk) xkm1/2 + 25*xkm3/(1+xkm3^2) + 8*cos(1.2*k) + uk;
 };
 
 %% Definizione delle funzione di osservazione

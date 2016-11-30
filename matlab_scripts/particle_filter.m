@@ -71,7 +71,7 @@ if Neff < Nt
    
 end
 
-%% Colcolo dello stato stimato
+%% Calcolo dello stato stimato
 
 xhk = zeros(nx,1);
 for i = 1:Ns;

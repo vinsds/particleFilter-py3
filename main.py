@@ -3,13 +3,14 @@ from Noise import *
 from PF import *
 from State_functions import *
 from Graph import *
+
 '''
-Set DEBUG true to show the operations results
+Settare DEBUG a true per visualizzare i risultati del filtraggio
 '''
 DEBUG = True
 
 
-# Define system parameters and observation time
+# Definisco i parametri del sistema
 STATE_DIM = 3
 PARTICLES = 200
 TIME = 50
@@ -20,7 +21,9 @@ sys_par = Parameters(
     TIME
 )
 
-# Define Noise parameters
+'''
+Definisco i parametri relativi al rumore
+'''
 SIGMA_U = 10
 SIGMA_V = 1
 
@@ -32,16 +35,22 @@ noise = Noise(
     )
 
 '''
-Separate memory space
+Preparo le locazioni di memoria per i risultati
 '''
 x = zeros((sys_par.state_dim, TIME))
 y = zeros((sys_par.state_dim, TIME))
 u = zeros((sys_par.state_dim, TIME))
 v = zeros((sys_par.state_dim, TIME))
 
-# Initial state
+'''
+Inizializzazione stato iniziale
+'''
 xh0 = 0
 
+
+'''
+Generazione de
+'''
 for index in range(0, sys_par.state_dim):
             u[index, 0] = xh0
             v[index, 0] = noise.gen_obs_noise()
@@ -87,8 +96,8 @@ for n in range(0, sys_par.state_dim):
         yh[n, k] = obs_functions[n](xh[n, k], 0)
 
 if DEBUG:
-    trace_graph(sys_par.state_dim, x, xh, "State Vs State Filtered")
-    trace_graph(sys_par.state_dim, y, yh, "Observations Vs Observations Filtered")
+    trace_graph(sys_par.state_dim, x, xh, "State Vs State Filtered", "State")
+    trace_graph(sys_par.state_dim, y, yh, "Observations Vs Observations Filtered", "Observation")
 
 
 
